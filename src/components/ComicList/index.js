@@ -23,13 +23,12 @@ export default function ComicsList() {
   const classes = useStyles();
   const comics = {
     columns: [
-      { title: 'Comic', field: 'id', render: rowData => <Button size="small" color="primary" component={Link} to={`/heros/${rowData.id}`}>{rowData.title}</Button>},
-      { title: 'Characters', field: 'characters.available'},
       {
         title: '',
         field: 'image',
         render: rowData => <Avatar alt={rowData.name} src={rowData.thumbnail ? `${rowData.thumbnail.path}.${rowData.thumbnail.extension}` : "/empty-avatar.png"} className={classes.bigAvatar}/>
-      }
+      },
+      { title: 'Title', field: 'id', render: rowData => <Button size="small" color="primary" component={Link} to={`/heros/${rowData.id}`}>{rowData.title} ({rowData.characters.available})</Button>}
     ],
     data: [],
   };

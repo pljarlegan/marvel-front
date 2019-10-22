@@ -25,26 +25,20 @@ export default function CharacterList() {
   const [ characters ] = useState({
     columns: [
       {
-        title: 'Nom',
-        field: 'id',
-        render: rowData => <Button component={Link} to={`/hero/${rowData.id}`} size="small" color="primary">{rowData.name}</Button>
-      },
-      {
-        title: 'description',
-        field: 'description',
-        render: rowData => <Typography variant="body2" color="textSecondary" component="p">{rowData.description.substr(0,100)}</Typography>
-      },
-      {
-        title: 'comics',
-        field: 'items',
-        render: rowData => <div>{rowData.comics.items.length}</div>
-      },
-      {
         title: '',
         field: 'image',
         render: rowData => <Avatar alt={rowData.name} src={rowData.thumbnail ? `${rowData.thumbnail.path}.${rowData.thumbnail.extension}` : "/empty-avatar.png"} className={classes.bigAvatar}/>
+      },
+      {
+        title: 'Name',
+        field: 'id',
+        render: rowData => <Button component={Link} to={`/hero/${rowData.id}`} size="small" color="primary">{rowData.name} ({rowData.comics.items.length})</Button>
+      },
+      {
+        title: 'Description',
+        field: 'description',
+        render: rowData => <Typography variant="body2" color="textSecondary" component="p">{rowData.description.substr(0,100)}</Typography>
       }
-
     ],
     data: [ { info: "fetch data ..." } ],
   });
