@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Switch,
+  Route,
+  // useLocation,
+} from "react-router-dom";
 
-function App() {
+import ButtonAppBar from "./components/ButtonAppBar";
+import CharacterCard from "./components/CharacterCard";
+import ComicsList from "./components/ComicList";
+import Home from "./components/Home";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import CharacterList from "./components/CharacterList";
+import { Provider } from "./provider/apollo-graphql";
+import config from './config/default';
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider value={{uri: config.graphql.endpoint}}>
+      <div>
+        <Router>
+        <ButtonAppBar/>
+        <br/>
+        <React.Fragment>
+          <CssBaseline/>
+          <Container fixed>
+
+              <Switch>
+                <Route path="/hero/:heroId">
+                  <CharacterCard/>
+                </Route>
+                <Route path="/comics">
+                  <ComicsList/>
+                </Route>
+                <Route path="/heros/:comicId">
+                  <CharacterList/>
+                </Route>
+                <Route path="/heros">
+                  <CharacterList/>
+                </Route>
+                <Route path="/">
+                  <Home/>
+                </Route>
+              </Switch>
+
+          </Container>
+        </React.Fragment>
+        </Router>
+      </div>
+    </Provider>
   );
 }
-
-export default App;
