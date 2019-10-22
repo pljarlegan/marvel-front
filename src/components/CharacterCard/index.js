@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useParams } from 'react-router-dom';
 import Grid from "@material-ui/core/Grid";
-import ListComicsName from "../listItem";
+import ListComicsName from "../ListComicsName";
 import Context from "../../provider/apollo-graphql";
 import { gql } from "apollo-boost";
 
