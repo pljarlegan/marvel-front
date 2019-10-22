@@ -32,12 +32,12 @@ export default function Home() {
                 component="img"
                 alt="Marvel"
                 height="140"
-                image="/marvel.jpg"
+                image="/MAD.jpg"
                 title="Marvel"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Marvel
+                  MAD : Marvel Api Demo
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   <b>Marvel Studios</b> est une société de production cinématographique américaine en prises de vue réelles et en animation assurant les adaptations cinématographiques des productions de Marvel Entertainment, essentiellement issues des Marvel Comics.
