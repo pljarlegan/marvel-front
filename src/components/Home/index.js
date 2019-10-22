@@ -19,21 +19,21 @@ export default function Home() {
   return (
     <Grid
       container
-      spacing="0"
+      spacing={0}
       direction="column"
       alignItems="center"
       justify="center"
     >
-      <Grid item xs="12">
+      <Grid item xs={12}>
         <Card>
           <Card className={classes.card}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="Contemplative Reptile"
+                alt="Marvel"
                 height="140"
                 image="/marvel.jpg"
-                title="Contemplative Reptile"
+                title="Marvel"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
