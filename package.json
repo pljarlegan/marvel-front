@@ -25,6 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +44,18 @@
     ]
   },
   "jest": {
+    "coverageThreshold": {
+      "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!<rootDir>/node_modules/"
+      ],
+      "global": {
+        "branches": 5,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
