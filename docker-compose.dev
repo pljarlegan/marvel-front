@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  ihm:
+    container_name: ihm
+    image: node:10.16.3
+    restart: always
+    ports:
+      - 8080:3000
+    environment:
+      - GRAPHQL_ENDPOINT=http://127.0.0.1:4000
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
+    volumes:
+      - ./:/var/www
+    command: /bin/sh -c "cd /var/www/public/ && ./build-env.sh && cd /var/www && npm run start"
+    stop_grace_period: 1s
+
