@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const getParam = (param, defaultValue = "") => {
   return process.env[param] ? process.env[param] : defaultValue;
 };
