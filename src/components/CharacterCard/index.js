@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CharacterCard({ location }) {
+export default function CharacterCard() {
   let { heroId } = useParams();
   const [ character, setCharacter ] = useState({});
   const client = useContext(Context);
