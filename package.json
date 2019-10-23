@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-docker": "node scripts/build.js",
     "test": "react-scripts test",
     "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject"
