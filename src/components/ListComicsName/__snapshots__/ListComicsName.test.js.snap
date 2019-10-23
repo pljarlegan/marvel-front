@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Matches the snapshot title 'bob', 0 items 1`] = `
+<WithStyles(ForwardRef(List))
+  className="makeStyles-root-8"
+  subheader={null}
+/>
+`;
+
+exports[`test Matches the snapshot title 'bob', 2 items 1`] = `
+<WithStyles(ForwardRef(List))
+  className="makeStyles-root-8"
+  subheader={
+    <ForwardRef(WithStyles)>
+      bob
+    </ForwardRef(WithStyles)>
+  }
+>
+  <WithStyles(ForwardRef(ListItem))
+    key="a"
+  >
+    a
+  </WithStyles(ForwardRef(ListItem))>
+  <WithStyles(ForwardRef(ListItem))
+    key="b"
+  >
+    b
+  </WithStyles(ForwardRef(ListItem))>
+</WithStyles(ForwardRef(List))>
+`;
