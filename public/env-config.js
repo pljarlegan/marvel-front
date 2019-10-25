@@ -1,3 +1,3 @@
 window._env_ = {
-  GRAPHQL_ENDPOINT: 'http://127.0.0.1:4000',
+  GRAPHQL_ENDPOINT: 'https://apollo-server-marvel.herokuapp.com',
 };
